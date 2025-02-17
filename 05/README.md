@@ -10,7 +10,7 @@ Odbierz dane z formularza i wyświetl na stronie bez sanityzacji.
 
 Opracuj taką treść pola formularza, aby można było przy pomocy JS pobrać ID sesji - to ma umożliwić przechycenie sesji.
 
-PS. Obsługa "ciasteczek" w JS wygląda [mniej więcej tak]('https://www.w3schools.com/js/js_cookies.asp'); 
+PS. Obsługa "ciasteczek" w JS wygląda (mniej więcej tak)['https://www.w3schools.com/js/js_cookies.asp']; 
 
 
 &nbsp;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 07, 2025 at 11:18 AM
+-- Generation Time: Aug 06, 2025 at 09:02 AM
 -- Wersja serwera: 8.0.42
 -- Wersja PHP: 8.3.20
 
@@ -24,32 +24,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `users`
+-- Struktura tabeli dla tabeli `sort`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `sort` (
   `id` int NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_0900_as_cs NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_0900_as_cs NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_0900_as_cs NOT NULL
+  `price` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_as_cs;
 
 --
--- Zrzut danych tabeli `users`
+-- Zrzut danych tabeli `sort`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'marcin', 'marcin@test.test', '$2y$10$uy0kB28cuIP.lY/6oD08peF5vTQWy/ibhSqTW5s.n6zS.xgbyxJiO'),
-(2, 'test', 'test@test.test', '$2y$10$Dgh3vP8DL7fctw5YYtOiO.JzpSo.D3zZ537uSQlE/r7SudZX9Lat.');
+INSERT INTO `sort` (`id`, `name`, `price`) VALUES
+(1, 'Kawa', 20),
+(2, 'Cukier', 10),
+(5, 'Mleko', 5),
+(6, 'Pieczywo', 3),
+(7, 'Sok', 15),
+(8, 'Arbuz', 17);
 
 --
 -- Indeksy dla zrzutów tabel
 --
 
 --
--- Indeksy dla tabeli `users`
+-- Indeksy dla tabeli `sort`
 --
-ALTER TABLE `users`
+ALTER TABLE `sort`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -57,10 +60,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `users`
+-- AUTO_INCREMENT dla tabeli `sort`
 --
-ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `sort`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

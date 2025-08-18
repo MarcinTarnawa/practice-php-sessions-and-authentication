@@ -1,0 +1,35 @@
+/* style.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    background-color: #e2e6ea;
+}
+
+.log-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap; /* This preserves line breaks and spacing from the 'data' file */
+    word-wrap: break-word;
+}

@@ -24,20 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `sort`
+-- Struktura tabeli dla tabeli `products`
 --
 
-CREATE TABLE `sort` (
+CREATE TABLE `products` (
   `id` int NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_0900_as_cs NOT NULL,
   `price` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_as_cs;
 
 --
--- Zrzut danych tabeli `sort`
+-- Zrzut danych tabeli `products`
 --
 
-INSERT INTO `sort` (`id`, `name`, `price`) VALUES
+INSERT INTO `products` (`id`, `name`, `price`) VALUES
 (1, 'Kawa', 20),
 (2, 'Cukier', 10),
 (5, 'Mleko', 5),
@@ -50,9 +50,9 @@ INSERT INTO `sort` (`id`, `name`, `price`) VALUES
 --
 
 --
--- Indeksy dla tabeli `sort`
+-- Indeksy dla tabeli `products`
 --
-ALTER TABLE `sort`
+ALTER TABLE `productssort`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -60,9 +60,9 @@ ALTER TABLE `sort`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `sort`
+-- AUTO_INCREMENT dla tabeli `products`
 --
-ALTER TABLE `sort`
+ALTER TABLE `products`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 

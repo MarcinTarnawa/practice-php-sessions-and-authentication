@@ -9,19 +9,12 @@ class Table {
         $this->dbName = $dbName;
     }
 
-    public function render($table, $sort) {
+    public function render($columns, $sort) {
         // table name
         $dbName = $this->dbName;
 
-        // get column names for sql
-        $selectedColumns = array_keys($table);
-        $sanitizedColumns = array_map(function($col) {
-           return preg_replace('/[^a-zA-Z0-9_]/', '', $col);
-        }, $selectedColumns);
-        $sqlColumns = implode(', ', $sanitizedColumns);
-
         // table content request
-        $result = $this->db->query("select {$sqlColumns} from {$dbName}")->fetchAll();
+        $result = $this->db->select($dbName, $columns)->fetchAll();
 
         //check for table content
         if (empty($result)) {
@@ -35,7 +28,7 @@ class Table {
         // table rendering
         echo '<table id="table">';
         echo "<thead><tr>";
-        foreach ($table as $names) {
+        foreach ($columns as $names) {
             echo '<th>' . htmlspecialchars($names) . '</th>';
         }
         echo "</tr></thead><tbody>";
@@ -56,6 +49,7 @@ class Table {
         });
         }
         
+        //display columns
         foreach ($result as $row) {
             echo '<tr>';
             foreach ($fields as $fieldName) {

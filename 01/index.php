@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'Validator.php';
 require 'Database.php';
 require 'Table.php';
 
@@ -13,12 +14,14 @@ $config = [
 ];
 
 // table name and columns
-$table = 'sort';
+$table = 'products';
 $columns = [ 'name' => 'Nazwa', 'price' => 'Cena'];
 $sort = $_GET['sort'] ?? $_COOKIE['cookieSort'] ?? 'alf';
 
+//set cookie for remember selected optoion
 setcookie('cookieSort', $sort, time() + 60, "/");
 
+//check for selected option
 function isSelected($optionValue, $currentSort) {
     if ($optionValue === $currentSort) {
         return 'selected';
@@ -28,15 +31,12 @@ function isSelected($optionValue, $currentSort) {
 try 
     {
     $db = new Database($config['database']);
-    $posts = $db->select($table, $columns)->fetchAll();
+    $post = new Table($db, $table);
+    $data = $post->render($columns, $sort);
     }
 catch(PDOException $e)
     {
     die("Error: ".$e->getMessage());
     }
-
-$post = new Table($db, $table);
-$data = $post->render($columns, $sort);
-// var_dump($data);
 
 require 'index.view.php';

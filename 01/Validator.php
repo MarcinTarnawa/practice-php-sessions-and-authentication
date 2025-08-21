@@ -2,15 +2,15 @@
 
 class Validator
 {
-    //sanitize columns
-    public static function sanitize($columns)
+    //sanitize value
+    public static function sanitize($value)
     {
-        $selectedColumns = array_keys($columns);
-        $sanitizedColumns = array_map(function($col) {
+        $selectedValue = array_keys($value);
+        $sanitizedValue = array_map(function($col) {
            return preg_replace('/[^a-zA-Z0-9_]/', '', $col);
-        }, $selectedColumns);
-        $columns = implode(', ', $sanitizedColumns);
+        }, $selectedValue);
+        $value = implode(', ', $sanitizedValue);
 
-        return $columns;
+        return $value;
     }
 }

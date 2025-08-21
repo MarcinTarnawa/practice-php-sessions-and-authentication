@@ -23,8 +23,9 @@ class Database {
     //select query
     public function select($tableName, $columns)
     {
+        $sqltableName = Validator::sanitize($tableName);
         $sqlcolumns = Validator::sanitize($columns);
-        $sql = "SELECT " . $sqlcolumns . " FROM " . $tableName;
+        $sql = "SELECT " . $sqlcolumns . " FROM " . $sqltableName;
         $statment = $this->connection->prepare($sql);
         $statment->execute();
         return $statment;

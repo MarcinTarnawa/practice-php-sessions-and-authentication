@@ -11,7 +11,7 @@ class Table {
 
     public function render($columns, $sort) {
         // table name
-        $dbName = $this->dbName;
+        $dbName = array_flip([$this->dbName]);
 
         // table content request
         $result = $this->db->select($dbName, $columns)->fetchAll();
